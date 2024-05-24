@@ -21,7 +21,7 @@
         - [Describa cómo funciona el event bubbling en el contexto de eventos de JavaScript.](#describa-cómo-funciona-el-event-bubbling-en-el-contexto-de-eventos-de-javascript)
     - [Responsive Web Design](#responsive-web-design)
         - [¿Qué son los media queries y cómo se utilizan en CSS para crear un diseño receptivo?](#qué-son-los-media-queries-y-cómo-se-utilizan-en-css-para-crear-un-diseño-receptivo)
-        - [Menciona al menos dos técnicas para hacer que las imágenes sean receptivas en unapágina web.](#menciona-al-menos-dos-técnicas-para-hacer-que-las-imágenes-sean-receptivas-en-unapágina-web)
+        - [Menciona al menos dos técnicas para hacer que las imágenes sean receptivas en unapágina web.](#menciona-al-menos-dos-técnicas-para-hacer-que-las-imágenes-sean-receptivas-en-una-página-web)
 
 ---
 
