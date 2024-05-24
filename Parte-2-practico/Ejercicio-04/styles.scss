@@ -1,0 +1,421 @@
+$primary-color: #007bff;
+$secondary-color: #2196f3;
+$font-family: 'Arial, sans-serif';
+$heading-font-family: 'Saira Extra Condensed', serif;
+$body-background: #ffffff;
+$text-color: #000000;
+
+@mixin heading-styles($font-size, $line-height) {
+    font-family: $heading-font-family;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #343a40;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+//* Global Styles
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 992px) {
+        padding-top: 0;
+    }
+}
+
+h1 {
+    @include heading-styles(6rem, 5.5rem);
+}
+
+h2 {
+    @include heading-styles(3.5rem, normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #343a40;
+}
+
+a {
+    color: $secondary-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($secondary-color, 10%);
+    }
+}
+
+.subheading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: $heading-font-family;
+    font-size: 1.35rem;
+    color: $primary-color;
+}
+
+#downloadButton {
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+}
+
+//* Section Styles General
+.heading-border {
+    width: 60px;
+    height: 3px;
+    background-color: $secondary-color;
+    margin: 0 auto 20px auto;
+}
+
+section.resume-section {
+    border-bottom: 1px solid #dee2e6;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+
+    .resume-item .resume-date {
+        min-width: none;
+
+        @media (min-width: 768px) {
+            min-width: 18rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        min-height: 100vh;
+    }
+
+    @media (min-width: 992px) {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+}
+
+.bg-primary {
+    background-color: darken($primary-color, 30%) !important;
+}
+
+.text-primary {
+    color: $primary-color !important;
+}
+
+//* Personal Section
+#personal {
+    &::before {
+        background-color: rgba(0, 0, 0, 0.1);
+        content: "";
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.text-personal {
+    color: $text-color;
+}
+
+//* Experiencia Section
+#experiencia {
+    background: $body-background;
+}
+
+//* Contacto Section
+#contact {
+    background: #f5f5f5;
+
+    .contact-cont h3 {
+        color: #555;
+        font-size: 45px;
+    }
+
+    .contact-cont p {
+        padding-right: 20px;
+        font-size: 15px;
+    }
+
+    .contact-cont2 address,
+    .contact-cont2 address a {
+        color: #666;
+    }
+
+    .contact-side-desc {
+        padding-top: 40px;
+    }
+
+    .contact-box-desc h3 {
+        color: #555;
+
+        i {
+            color: $secondary-color;
+        }
+    }
+
+    .social-icon-f li {
+        display: inline-block;
+
+        i {
+            height: 35px;
+            width: 35px;
+            line-height: 31px;
+            border: 2px solid $secondary-color;
+            text-align: center;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .contact-box-desc {
+            text-align: center;
+        }
+
+        .social-icon-f {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .social-icon-f {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .social-icon-f {
+            text-align: center;
+        }
+    }
+}
+
+//* Award Box
+#award-box {
+    overflow: hidden;
+    position: relative;
+    padding: 60px 0;
+
+    &::before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background: #cfcdcd;
+        position: absolute;
+        top: 0;
+        left: 50%;
+    }
+
+    .award {
+        width: 50%;
+        clear: both;
+        position: relative;
+
+        &:first-child::before,
+        &:last-child::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            background: #cfcdcd;
+            box-sizing: content-box;
+            border: 5px solid #fff;
+            box-shadow: 0 0 0 2px #cfcdcd;
+            position: absolute;
+            top: -54px;
+            right: -11px;
+            transform: rotate(45deg);
+        }
+
+        &:last-child::before {
+            top: auto;
+            bottom: -54px;
+        }
+
+        &:last-child:nth-child(even)::before {
+            right: auto;
+            left: -11px;
+        }
+
+        .award-icon {
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border: 1px solid #cfcdcd;
+            position: absolute;
+            top: 17px;
+            right: -13px;
+            z-index: 1;
+            transform: rotate(45deg);
+
+            &::before {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 15px;
+                background: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: background-color 0.2s ease 0s;
+            }
+        }
+
+        &:hover .award-icon::before {
+            background: $secondary-color;
+        }
+
+        .award-content {
+            width: 85%;
+            padding: 18px 30px;
+            background: #fff;
+            text-align: right;
+            float: left;
+            border: 1px solid transparent;
+            position: relative;
+            transition: all 0.3s ease 0s;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 14px;
+                height: 14px;
+                background: #fff;
+                border: 1px solid #cfcdcd;
+                position: absolute;
+                top: 21px;
+                right: -7.3px;
+                transform: rotate(45deg);
+                transition: all 0.2s ease 0s;
+            }
+
+            &::after {
+                content: "";
+                width: 11%;
+                height: 1px;
+                background: #cfcdcd;
+                position: absolute;
+                top: 28px;
+                right: -14%;
+            }
+
+            &:hover {
+                border: 1px solid #cfcdcd;
+
+                &::before {
+                    background: $secondary-color;
+                    border-color: $secondary-color;
+                }
+            }
+        }
+
+        &:hover .date {
+            color: #444;
+        }
+
+        &:hover .title,
+        &:hover .subtitle {
+            color: $secondary-color;
+        }
+
+        .date {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: $secondary-color;
+            margin: 0 0 8px;
+            transition: all 0.3s ease 0s;
+        }
+
+        .title,
+        .subtitle {
+            font-size: 14px;
+            color: #444;
+            margin-top: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        .subtitle {
+            font-size: 18px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #777;
+            line-height: 28px;
+            margin-top: 8px;
+        }
+    }
+
+    .award:nth-child(2n),
+    .award:nth-child(2n) .award-content {
+        float: right;
+        text-align: left;
+    }
+
+    .award:nth-child(2n) .award-icon {
+        right: 0;
+        left: -12px;
+    }
+
+    .award:nth-child(2n) .award-content::before {
+        left: -7.3px;
+    }
+
+    .award:nth-child(2n) .award-content::after {
+        left: -14%;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding-left: 20px;
+
+        &::before {
+            left: 20px;
+        }
+
+        .award {
+            width: 100%;
+
+            .award-content {
+                padding: 5px;
+            }
+        }
+
+        .award,
+        .award-content {
+            float: right;
+            text-align: left;
+        }
+
+        .award:first-child::before,
+        .award:last-child:nth-child(odd)::before {
+            right: auto;
+            left: -11px;
+        }
+
+        .award-icon {
+            right: 0;
+            left: -12px;
+        }
+
+        .award-content::before {
+            left: -7.3px;
+        }
+
+        .award-content::after {
+            left: -14%;
+        }
+    }
+}
